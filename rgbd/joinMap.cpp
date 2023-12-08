@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
                 point[0] = (u - cx) * point[2] / fx;
                 point[1] = (v - cy) * point[2] / fy;
                 Eigen::Vector3d pointWorld = T * point;
-
+                cout<< point[0] <<" "<<" "<<point[1]<<" "<<point[2]<<endl;
                 Vector6d p;
                 p.head<3>() = pointWorld;
                 p[5] = color.data[v * color.step + u * color.channels()];   // blue
@@ -115,3 +115,5 @@ void showPointCloud(const vector<Vector6d, Eigen::aligned_allocator<Vector6d>> &
     }
     return;
 }
+
+
